@@ -6,19 +6,14 @@
 import AutoSuggest from 'react-native-autosuggest'
 // cloned from the github repo for development purposes
 import React, { Component } from 'react'
-import {
-  TextInput,
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native'
+import { TextInput, AppRegistry, StyleSheet, View } from 'react-native'
 
-const myOptionalCustomClearBtn = [
+/* const myOptionalCustomClearBtn = [
   <View key={1} style={{ flex: 1, padding: 2, justifyContent: 'center' }}>
     <Text>Clear Me!!</Text>
-  </View>
+  </View>,
 ]
+*/
 
 const Styles = StyleSheet.create({
   TextInput: {
@@ -26,20 +21,27 @@ const Styles = StyleSheet.create({
     paddingLeft: 10,
     fontSize: 12,
     backgroundColor: 'lightgrey',
-    height: 40
+    height: 40,
   },
   AutoSuggest: {
     width: 300,
     paddingLeft: 10,
     fontSize: 12,
     backgroundColor: 'lightgrey',
-    height: 40
-  }
+    height: 40,
+  },
 })
 export default class AutoSuggestExample extends Component {
-  render() {
+  render () {
     return (
-      <View style={{ flex: 1, backgroundColor: 'dimgrey', paddingTop: 50, paddingLeft: 10 }}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: 'dimgrey',
+          paddingTop: 50,
+          paddingLeft: 10,
+        }}
+      >
         <TextInput
           style={Styles.TextInput}
           placeholder="I'm an ordinary, boring TextInput component."
@@ -52,13 +54,24 @@ export default class AutoSuggestExample extends Component {
             paddingLeft: 10,
             fontSize: 12,
             backgroundColor: 'lightgrey',
-            height: 40
+            height: 40,
           }}
-          onChangeText={(selection) => console.log(`you selected ${selection}`)}
-          clearBtn={null  /* myOptionalCustomClearBtn */}
-          terms={['Apple', 'Banana', 'Orange', 'Strawberry', 'Lemon', 'Cantaloupe', 'Peach', 'Mandarin', 'Date', 'Kiwi']}
+          onChangeText={selection => console.log(`you selected ${selection}`)}
+          clearBtn={null /* myOptionalCustomClearBtn */}
+          terms={[
+            'Apple',
+            'Banana',
+            'Orange',
+            'Strawberry',
+            'Lemon',
+            'Cantaloupe',
+            'Peach',
+            'Mandarin',
+            'Date',
+            'Kiwi',
+          ]}
           placeholder="I'm a super-awesome TextInput!"
-          placeholderTextColor="darkgrey"
+          placeholderTextColor='darkgrey'
         />
         <TextInput
           style={Styles.TextInput}

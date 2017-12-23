@@ -5,7 +5,11 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "precommit": "lint-staged",
     "postinstall": "sh ./setup.sh"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier-standard", "git add"]
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -25,7 +29,10 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
     "jest": "20.0.4",
+    "lint-staged": "^6.0.0",
+    "prettier-standard": "^8.0.0",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {

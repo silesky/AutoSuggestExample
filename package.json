@@ -9,7 +9,11 @@
     "postinstall": "sh ./setup.sh"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "prettier-standard", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "prettier-standard",
+      "git add"
+    ]
   },
   "dependencies": {
     "react": "^16.0.0",
